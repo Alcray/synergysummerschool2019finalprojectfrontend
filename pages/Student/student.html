@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Management</title>
+    <title>Student</title>
     <link rel="stylesheet" href="student.css">
     <script src="student.controller.js"></script>
 
@@ -12,7 +12,7 @@
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
-            <symbol id="icon-triangle-right" viewBox="0 0 20px 20px">
+            <symbol id="icon-triangle-right" viewBox="0 0 20 20">
                 <title>triangle-right</title>
                 <path d="M15 10l-9 5v-10l9 5z"></path>
             </symbol>
@@ -20,9 +20,10 @@
     </svg>
     <div class="container">
         <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
+            <div class="modal-content" style="display: flex;align-items: center; justify-content: space-around">
                 <p>Some text in the Modal..</p>
+                
+                <div class="close">&times;</div>
             </div>
 
         </div>
@@ -30,50 +31,15 @@
             <div class="divTableHeading">
                 <div class="divTableRow">
                     <div class="divTableCell1">
-                        Product
+                        Student's Name
                     </div>
-                    <div class="divTableCell2">Price</div>
+                    <div class="divTableCell2">Grade Point Average</div>
                 </div>
             </div>
-            <div class="divTableBody">
-                <div class="divTableRow">
-                    <div class="divTableCell1">
-                        <div style="display: flex;align-items: center;width: 100%">
-                            <svg class="icon icon-triangle-right" style="width: 20px;height: 20px;" onclick="popUpBox()">
-                                <use xlink:href="#icon-triangle-right"></use>
-                            </svg>
-                            <p style="margin-left: 15px;">Apple</p>
-                        </div>
-                    </div>
-                    <div class="divTableCell2">$1</div>
-                </div>
-                <div class="divTableRow">
-                    <div class="divTableCell1">
-                        <div style="display: flex;align-items: center;width: 100%">
-                            <svg class="icon icon-triangle-right" style="width: 20px;height: 20px;">
-                                <use xlink:href="#icon-triangle-right"></use>
-                            </svg>
-                            <p style="margin-left: 15px;">Apple</p>
-                        </div>
-                    </div>
-                    <div class="divTableCell2">$1</div>
-                </div>
-                <div class="divTableRow">
-                    <div class="divTableCell1">
-                        <div style="display: flex;align-items: center;width: 100%">
-                            <svg class="icon icon-triangle-right" style="width: 20px;height: 20px;">
-                                <use xlink:href="#icon-triangle-right"></use>
-                            </svg>
-                            <p style="margin-left: 15px;">Apple</p>
-                        </div>
-                    </div>
-                    <div class="divTableCell2">$1</div>
-                </div>
+            <div class="divTableBody" id="tableBody">
+                
             </div>
-            <table id="table">
-                <thead></thead>
-                <tbody></tbody>
-            </table>
+        </div>
 
 
 
