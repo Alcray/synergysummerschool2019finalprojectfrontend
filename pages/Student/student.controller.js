@@ -1,7 +1,7 @@
 function getJSONfromDB(){
     return [
         {
-            firstName: 'Roger', lastName: 'Barber', faculty: 'Law',
+            firstName: 'fghfghasddoger', lastName: 'Barber', faculty: 'Law',
             subjects: [
                 {subject:'Combinatorics', marks: 20},
                 {subject:'Graph Theory', marks: 17},
@@ -9,7 +9,7 @@ function getJSONfromDB(){
             ]
         },
         {
-            firstName: 'Roger', lastName: 'Barber', faculty: 'ComputerScience',
+            firstName: 'fghfghoger', lastName: 'Barber', faculty: 'ComputerScience',
             subjects: [
                 {subject:'Combinatorics', marks: 20},
                 {subject:'Graph Theory', marks: 17},
@@ -25,7 +25,7 @@ function getJSONfromDB(){
             ]
         },
         {
-            firstName: 'Roger', lastName: 'Barber', faculty: 'ComputerScience',
+            firstName: 'Rfffffger', lastName: 'Barber', faculty: 'ComputerScience',
             subjects: [
                 {subject:'Combinatorics', marks: 20},
                 {subject:'Graph Theory', marks: 17},
@@ -59,7 +59,13 @@ function LoadDB(){
     }
 }
 
+let input = '';
+let string = '';
+
 function updateResult(query) {
+
+string = input;
+
     let res = document.getElementById("tableBody");
     res.innerHTML = "";
 
@@ -89,8 +95,29 @@ function updateResult(query) {
         })
     })
     let autocomp = document.getElementsByClassName("autocomp-div")[0].querySelector('p').innerHTML;
+  //  suggest(autocomp);
+   //autocomplite();
+}
+function autocomplite(){
+  alert(event.keycode);
+  if(this.event.keyCode == 9)
+document.getElementById(searchBox).innerHTML = document.getElementsByClassName("autocomp-div")[0].querySelector('p').innerHTML;;
+
 }
 
+function suggest(query){
+
+  let res = document.getElementById("idiotAuto");
+  res.innerHTML = "";
+
+  window.DataObject.map(function(algo){
+      query.split(" ").map(function (word){
+          if((algo.firstName + ' ' + algo.lastName).toLowerCase().indexOf(word.toLowerCase()) != -1){
+              res.innerHTML += `<li style="color: black;" type = "text">${algo.firstName} ${algo.lastName}</li>`;
+          }
+      })
+  })
+}
 
 function sortByFaculty() {
     let res = document.getElementById("tableBody");

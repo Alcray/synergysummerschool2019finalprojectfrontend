@@ -17,9 +17,13 @@
     <option value="law">Law</option>
     <option value="mathematics">Mathematics</option>
   </select>
-
- <input oninput="updateResult(this.value)" type="search" class="form-control" placeholder="Search..." />
-
+  <div>
+ <input oninput="updateResult(this.value); suggest(this.value);" type="search" class="form-control" placeholder="Search..." id = "searchBox">
+          <div style="height: 50px; overflow: auto; border: 1px solid black; width: 20%;">
+             <ul id= "idiotAuto">
+            </ul>
+          </div>
+</div>
     <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
