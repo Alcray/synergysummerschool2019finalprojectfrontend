@@ -17,7 +17,7 @@ function getJSONfromDB(){
             ]
         },
         {
-            firstName: 'Roger', lastName: 'Barber', faculty: 'Computer Science',
+            firstName: 'Aaran', lastName: 'Barber', faculty: 'Computer Science',
             subjects: [
                 {subject:'Combinatorics', marks: 20},
                 {subject:'Graph Theory', marks: 17},
@@ -36,8 +36,7 @@ function getJSONfromDB(){
 }
 
 function LoadDB(){
-    let JSONText = getJSONfromDB();
-    let DataObject = getJSONfromDB();
+    window.DataObject = getJSONfromDB();
 
     for(let item of DataObject){
         let x = 0;
@@ -60,7 +59,28 @@ function LoadDB(){
     }
 }
 
+function updateResult(query) {
+    let res = document.getElementById("tableBody");
+    res.innerHTML = "";
 
+    window.DataObject.map(function(algo){
+        query.split(" ").map(function (word){
+            if((algo.firstName + ' ' + algo.lastName).toLowerCase().indexOf(word.toLowerCase()) != -1){
+                res.innerHTML += `<div class="divTableRow">
+                <div class="divTableCell1">
+                    <div style="display: flex;align-items: center;width: 100%">
+                        <svg class="icon icon-triangle-right" style="width: 20px;height: 20px;" onclick="popUpBox()">
+                            <use xlink:href="#icon-triangle-right"></use>
+                        </svg>
+                        <p style="margin-left: 15px;">${algo.firstName} ${algo.lastName}</p>
+                    </div>
+                </div>
+                <div class="divTableCell2">${algo.faculty}</div>
+            </div>`;
+            }
+        })
+    })
+}
 
 function popUpBox(){
     var modal = document.getElementById("myModal");
