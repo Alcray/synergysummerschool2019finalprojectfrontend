@@ -89,7 +89,6 @@ function updateResult(query) {
         })
     })
     let autocomp = document.getElementsByClassName("autocomp-div")[0].querySelector('p').innerHTML;
-    alert(autocomp);
 }
 
 
